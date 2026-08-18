@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "wh_myrayfin",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ba1285fe-f3e5-9ea5-47b6-a4c23a9064de"
+  }
+}

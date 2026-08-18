@@ -1,0 +1,153 @@
+table DimProduct
+	lineageTag: 9dc97ddc-a04e-4ac7-8a3f-213a7b65b0ac
+	sourceLineageTag: [retail].[DimProduct]
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: da51445c-a93d-4bbe-97da-d6ae6fc360fc
+		sourceLineageTag: ProductKey
+		summarizeBy: count
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: 64f11ee2-e243-45cb-81fa-cf2f57dace25
+		sourceLineageTag: ProductID
+		summarizeBy: none
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		sourceProviderType: varchar(200)
+		lineageTag: 979e662b-d705-4ab9-b577-e6cad6d0ef92
+		sourceLineageTag: ProductName
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCategory
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 117e6981-6d36-499a-8446-e57866ae5577
+		sourceLineageTag: ProductCategory
+		summarizeBy: none
+		sourceColumn: ProductCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategory
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 9ba96011-a457-4253-addc-9c71f7d920e4
+		sourceLineageTag: ProductSubcategory
+		summarizeBy: none
+		sourceColumn: ProductSubcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 58824595-6535-452c-a121-75b385368d7b
+		sourceLineageTag: Brand
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: c35cdace-f483-4de6-92aa-36e5b592fee0
+		sourceLineageTag: Color
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: 48df18f7-08c6-445b-99e2-1423422d57e6
+		sourceLineageTag: Size
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitCost
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: decimal(12, 2)
+		lineageTag: 0f3b446d-cecf-4f66-a4ee-3ca35f80d768
+		sourceLineageTag: UnitCost
+		summarizeBy: sum
+		sourceColumn: UnitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column UnitPrice
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: decimal(12, 2)
+		lineageTag: 7bae5622-104a-4892-8662-91c2c4f05cde
+		sourceLineageTag: UnitPrice
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column EffectiveDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: f6e9a423-4442-4cc1-a434-c64716a104b5
+		sourceLineageTag: EffectiveDate
+		summarizeBy: none
+		sourceColumn: EffectiveDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExpirationDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 3768d6a2-345d-44b8-830e-ebf89235b7b6
+		sourceLineageTag: ExpirationDate
+		summarizeBy: none
+		sourceColumn: ExpirationDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrent
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 8cfbf37a-fa29-4db8-b397-41b501e18b21
+		sourceLineageTag: IsCurrent
+		summarizeBy: none
+		sourceColumn: IsCurrent
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProduct = entity
+		mode: directLake
+		source
+			entityName: DimProduct
+			schemaName: retail
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

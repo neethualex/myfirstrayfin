@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "sm_rayfin"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6c0360e8-7102-a878-4d8d-e3c5e384c5f9"
+  }
+}

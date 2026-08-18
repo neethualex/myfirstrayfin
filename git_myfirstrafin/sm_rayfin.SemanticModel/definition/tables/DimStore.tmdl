@@ -1,0 +1,125 @@
+table DimStore
+	lineageTag: f359c64d-79b1-4d40-a88a-d5dfb9a07389
+	sourceLineageTag: [retail].[DimStore]
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f28097e4-d559-4e6c-ad8e-d4f396ebafd9
+		sourceLineageTag: StoreKey
+		summarizeBy: count
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreID
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: a6f064f3-14ba-4127-a7ef-5f0ca192e14e
+		sourceLineageTag: StoreID
+		summarizeBy: none
+		sourceColumn: StoreID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreName
+		dataType: string
+		sourceProviderType: varchar(200)
+		lineageTag: 89d65617-c903-49ae-81e4-33aef738ff9e
+		sourceLineageTag: StoreName
+		summarizeBy: none
+		sourceColumn: StoreName
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreType
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: 2abf140f-d168-4538-8ef2-62f61f0be0d7
+		sourceLineageTag: StoreType
+		summarizeBy: none
+		sourceColumn: StoreType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 19457d46-0a94-482d-adfa-759afdd26387
+		sourceLineageTag: Region
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvince
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 2a608d66-40e5-4652-ad4c-41fbaed703d1
+		sourceLineageTag: StateProvince
+		summarizeBy: none
+		sourceColumn: StateProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 83879151-0d25-4df0-adaa-720b42c04fa3
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: 142dc318-fc63-4864-a8ce-902d6390224d
+		sourceLineageTag: PostalCode
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 68d45a1e-ac8e-4ce2-8be3-1b3d3e277362
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column OpenDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: b48c381c-9432-478a-8653-70aa45951d32
+		sourceLineageTag: OpenDate
+		summarizeBy: none
+		sourceColumn: OpenDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreManager
+		dataType: string
+		sourceProviderType: varchar(200)
+		lineageTag: 4cb0f32c-ff95-4957-af86-c23445b60ff4
+		sourceLineageTag: StoreManager
+		summarizeBy: none
+		sourceColumn: StoreManager
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimStore = entity
+		mode: directLake
+		source
+			entityName: DimStore
+			schemaName: retail
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

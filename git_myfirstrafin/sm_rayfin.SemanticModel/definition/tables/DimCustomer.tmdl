@@ -1,0 +1,157 @@
+table DimCustomer
+	lineageTag: 8b2c9a4f-b1fb-439e-ad77-7f67961507d6
+	sourceLineageTag: [retail].[DimCustomer]
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 61675ade-b4db-48d7-8399-d5bc5d2617dd
+		sourceLineageTag: CustomerKey
+		summarizeBy: count
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: 45741469-1f7a-41ab-ac39-de5150bc1616
+		sourceLineageTag: CustomerID
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerName
+		dataType: string
+		sourceProviderType: varchar(200)
+		lineageTag: af8ec3f5-328a-4cab-b313-9db8a2334728
+		sourceLineageTag: CustomerName
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		sourceProviderType: varchar(200)
+		lineageTag: 27f1c138-6d00-4bab-9a61-b5d166a320b3
+		sourceLineageTag: Email
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: 03565475-d663-497f-ad07-6da419454ee9
+		sourceLineageTag: Phone
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine1
+		dataType: string
+		sourceProviderType: varchar(200)
+		lineageTag: 779a3d32-95a4-4d8c-bb4a-6c52c9d685d1
+		sourceLineageTag: AddressLine1
+		summarizeBy: none
+		sourceColumn: AddressLine1
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 0ddd68eb-e4e2-4290-b4f0-5144ce7d510d
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvince
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: a205a8cc-bbb2-4ac0-b1b9-25c9b01e8319
+		sourceLineageTag: StateProvince
+		summarizeBy: none
+		sourceColumn: StateProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: 397c33e5-d140-4890-8693-08cffb096b46
+		sourceLineageTag: PostalCode
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: fd9f3246-718e-44a8-bbe6-f1d4af35ac84
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerSegment
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: 0ff0fb75-1969-4582-b652-90cb0f41ab23
+		sourceLineageTag: CustomerSegment
+		summarizeBy: none
+		sourceColumn: CustomerSegment
+
+		annotation SummarizationSetBy = Automatic
+
+	column EffectiveDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 912d9271-a7ec-4e1c-88d1-fe39b48c694c
+		sourceLineageTag: EffectiveDate
+		summarizeBy: none
+		sourceColumn: EffectiveDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExpirationDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 2d0421fb-9771-4b47-9970-768871f79df7
+		sourceLineageTag: ExpirationDate
+		summarizeBy: none
+		sourceColumn: ExpirationDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrent
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: e39e631b-9e31-4ef0-98ad-8c9d4327f882
+		sourceLineageTag: IsCurrent
+		summarizeBy: none
+		sourceColumn: IsCurrent
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCustomer = entity
+		mode: directLake
+		source
+			entityName: DimCustomer
+			schemaName: retail
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

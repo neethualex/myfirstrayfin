@@ -2,6 +2,49 @@ table FactSales
 	lineageTag: c3cc9943-4f6e-4e77-ae4f-3c4c125794aa
 	sourceLineageTag: [retail].[FactSales]
 
+	measure 'Total Sales' = SUM(FactSales[SalesAmount])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: f66ec162-8dac-4f98-b13d-3c1ff6ff2a95
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Total Cost' = SUM(FactSales[CostAmount])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d445a55b-122d-4090-aa8e-2a44ca520294
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Total Profit' = SUM(FactSales[ProfitAmount])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e94f5d95-5f07-4906-8d61-d6e5e3abcb23
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Total Units' = SUM(FactSales[Quantity])
+		formatString: 0
+		lineageTag: c3f7f664-e331-4b4c-a4bd-cf3c3f4cfcf0
+
+		changedProperty = Name
+
+	measure 'Profit Margin %' = DIVIDE([Total Profit], [Total Sales])
+		lineageTag: 33cb8dae-2f28-41a0-9141-f0d98e280a02
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Distinct Orders' = DISTINCTCOUNT(FactSales[OrderNumber])
+		formatString: 0
+		lineageTag: 99cbefee-0c39-4f49-96ce-3d48b0a4de3e
+
+		changedProperty = Name
+
 	column SalesKey
 		dataType: int64
 		formatString: 0
@@ -19,7 +62,7 @@ table FactSales
 		sourceProviderType: int
 		lineageTag: 5f1bb6fb-eb26-4e51-a052-11fb9f658afd
 		sourceLineageTag: DateKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: DateKey
 
 		annotation SummarizationSetBy = Automatic
@@ -30,7 +73,7 @@ table FactSales
 		sourceProviderType: bigint
 		lineageTag: e2f4157c-db8f-4d6e-a987-a247779ef370
 		sourceLineageTag: CustomerKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: CustomerKey
 
 		annotation SummarizationSetBy = Automatic
@@ -41,7 +84,7 @@ table FactSales
 		sourceProviderType: bigint
 		lineageTag: 6e7a9090-301c-4457-8597-6e1870e92c3d
 		sourceLineageTag: ProductKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: ProductKey
 
 		annotation SummarizationSetBy = Automatic
@@ -52,7 +95,7 @@ table FactSales
 		sourceProviderType: bigint
 		lineageTag: 449ca81d-cbee-4c92-b051-545ca4547b10
 		sourceLineageTag: StoreKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: StoreKey
 
 		annotation SummarizationSetBy = Automatic

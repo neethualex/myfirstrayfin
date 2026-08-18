@@ -8,7 +8,7 @@ table DimDate
 		sourceProviderType: int
 		lineageTag: 633097b0-08f6-4973-848d-688e8964cab3
 		sourceLineageTag: DateKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: DateKey
 
 		annotation SummarizationSetBy = Automatic
@@ -30,7 +30,7 @@ table DimDate
 		sourceProviderType: smallint
 		lineageTag: b8cb4491-6ddd-495c-93d1-b313a24b7d64
 		sourceLineageTag: DayOfMonth
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: DayOfMonth
 
 		annotation SummarizationSetBy = Automatic
@@ -51,7 +51,7 @@ table DimDate
 		sourceProviderType: smallint
 		lineageTag: ea597ab4-e190-45fe-a1fc-71d02e3cda1f
 		sourceLineageTag: DayOfWeek
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: DayOfWeek
 
 		annotation SummarizationSetBy = Automatic
@@ -62,7 +62,7 @@ table DimDate
 		sourceProviderType: smallint
 		lineageTag: 6a2af3c9-aeda-45a7-bb0f-08698d428381
 		sourceLineageTag: DayOfYear
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: DayOfYear
 
 		annotation SummarizationSetBy = Automatic
@@ -73,7 +73,7 @@ table DimDate
 		sourceProviderType: smallint
 		lineageTag: d51be3f3-8e82-4cc1-b576-e79e19f9749a
 		sourceLineageTag: WeekOfYear
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: WeekOfYear
 
 		annotation SummarizationSetBy = Automatic
@@ -84,7 +84,7 @@ table DimDate
 		sourceProviderType: smallint
 		lineageTag: ef1ba016-6f3c-4e38-879a-015e7e655ac5
 		sourceLineageTag: MonthNumber
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: MonthNumber
 
 		annotation SummarizationSetBy = Automatic
@@ -105,7 +105,7 @@ table DimDate
 		sourceProviderType: smallint
 		lineageTag: 046c2961-0578-4152-a89d-a8c24a80d195
 		sourceLineageTag: CalendarQuarter
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: CalendarQuarter
 
 		annotation SummarizationSetBy = Automatic
@@ -116,7 +116,7 @@ table DimDate
 		sourceProviderType: smallint
 		lineageTag: 472a9ebc-7c6e-4fc5-90ad-8a5980436689
 		sourceLineageTag: CalendarYear
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: CalendarYear
 
 		annotation SummarizationSetBy = Automatic
@@ -127,7 +127,7 @@ table DimDate
 		sourceProviderType: smallint
 		lineageTag: ba93f10d-96f7-4e35-9a41-b42725bb56ef
 		sourceLineageTag: FiscalQuarter
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: FiscalQuarter
 
 		annotation SummarizationSetBy = Automatic
@@ -138,7 +138,7 @@ table DimDate
 		sourceProviderType: smallint
 		lineageTag: ccc2935e-d5b8-42fa-922f-7bf2a6cdc215
 		sourceLineageTag: FiscalYear
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: FiscalYear
 
 		annotation SummarizationSetBy = Automatic

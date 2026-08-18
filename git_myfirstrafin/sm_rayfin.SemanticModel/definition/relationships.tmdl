@@ -1,0 +1,16 @@
+relationship 84cdefd0-fa18-b71e-46c6-40ebba9682be
+	fromColumn: FactSales.CustomerKey
+	toColumn: DimCustomer.CustomerKey
+
+relationship ae2682de-29a6-c648-bd0e-4a6ca396d37d
+	fromColumn: FactSales.DateKey
+	toColumn: DimDate.DateKey
+
+relationship 13cbfa22-e5d2-5be8-fdf6-12491013c758
+	fromColumn: FactSales.ProductKey
+	toColumn: DimProduct.ProductKey
+
+relationship ebec714f-d215-271e-c572-fe86b0e901f6
+	fromColumn: FactSales.StoreKey
+	toColumn: DimStore.StoreKey
+

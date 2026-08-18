@@ -8,7 +8,7 @@ table DimProduct
 		sourceProviderType: bigint
 		lineageTag: da51445c-a93d-4bbe-97da-d6ae6fc360fc
 		sourceLineageTag: ProductKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: ProductKey
 
 		annotation SummarizationSetBy = Automatic
@@ -89,7 +89,7 @@ table DimProduct
 		sourceProviderType: decimal(12, 2)
 		lineageTag: 0f3b446d-cecf-4f66-a4ee-3ca35f80d768
 		sourceLineageTag: UnitCost
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: UnitCost
 
 		annotation SummarizationSetBy = Automatic
@@ -102,7 +102,7 @@ table DimProduct
 		sourceProviderType: decimal(12, 2)
 		lineageTag: 7bae5622-104a-4892-8662-91c2c4f05cde
 		sourceLineageTag: UnitPrice
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: UnitPrice
 
 		annotation SummarizationSetBy = Automatic

@@ -8,7 +8,7 @@ table DimCustomer
 		sourceProviderType: bigint
 		lineageTag: 61675ade-b4db-48d7-8399-d5bc5d2617dd
 		sourceLineageTag: CustomerKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: CustomerKey
 
 		annotation SummarizationSetBy = Automatic

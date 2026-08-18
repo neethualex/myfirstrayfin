@@ -8,7 +8,7 @@ table DimStore
 		sourceProviderType: bigint
 		lineageTag: f28097e4-d559-4e6c-ad8e-d4f396ebafd9
 		sourceLineageTag: StoreKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: StoreKey
 
 		annotation SummarizationSetBy = Automatic
